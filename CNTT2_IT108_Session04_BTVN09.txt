@@ -1,0 +1,28 @@
+Bài 9: Xử lý sự cố bảo mật file trên Server OrderTech bằng Terminal
+[BƯỚC 1] XÁC ĐỊNH VỊ TRÍ HIỆN TẠI
+- Câu lệnh:
+  + Linux / Git Bash / PowerShell: pwd
+- Giải thích: Xác định đường dẫn thư mục hiện tại để biết chính xác vị trí đang đứng trên máy chủ trước khi thực hiện các thao tác
+--------------------------------------------------------------------------------
+[BƯỚC 2] XÁC NHẬN SỰ CỐ TRONG THƯ MỤC PUBLIC
+- Câu lệnh:
+  + Linux / Git Bash: ls public
+  + PowerShell: dir public
+- Giải thích: Liệt kê các file trong thư mục `public` để kiểm tra và xác nhận sự tồn tại của file chứa mật khẩu `db_password.txt` và file mã độc `hacker_log.bat`
+
+--------------------------------------------------------------------------------
+[BƯỚC 3] XỬ LÝ BẪY DỮ LIỆU & DI CHUYỂN AN TOÀN
+1. Lệnh tạo thư mục an toàn (ngang hàng với `public`)
+   + Linux / PowerShell: mkdir secrets
+2. Lệnh di chuyển file `db_password.txt` vào `secrets
+   + Linux / Git Bash: mv public/db_password.txt secrets/
+   + PowerShell: move public\db_password.txt secrets\
+- Giải thích: Phải tạo thư mục `secrets` trước bằng `mkdir`. Nếu chưa tạo thư mục mà thực hiện ngay lệnh di chuyển (`mv`/`move`), hệ thống sẽ hiểu nhầm `secrets` là tên file mới và đổi tên file `db_password.txt` thành `secrets` thay vì chuyển vào thư mục.
+
+--------------------------------------------------------------------------------
+[BƯỚC 4] DỌN DẸP MÃ ĐỘC
+- Câu lệnh:
+  + Linux / Git Bash: rm public/hacker_log.bat
+  + PowerShell: del public\hacker_log.bat[cite: 1, 2]
+- Giải thích: Xóa vĩnh viễn file mã độc `hacker_log.bat` khỏi hệ thống để ngăn chặn nguy cơ an ninh.
+
