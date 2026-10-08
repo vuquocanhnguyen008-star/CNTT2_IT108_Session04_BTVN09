@@ -23,6 +23,6 @@ Bài 9: Xử lý sự cố bảo mật file trên Server OrderTech bằng Termin
 [BƯỚC 4] DỌN DẸP MÃ ĐỘC
 - Câu lệnh:
   + Linux / Git Bash: rm public/hacker_log.bat
-  + PowerShell: del public\hacker_log.bat[cite: 1, 2]
+  + PowerShell: del public\hacker_log.bat
 - Giải thích: Xóa vĩnh viễn file mã độc `hacker_log.bat` khỏi hệ thống để ngăn chặn nguy cơ an ninh.
 
